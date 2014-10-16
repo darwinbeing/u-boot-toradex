@@ -146,6 +146,10 @@ else
 ALL-y += u-boot.imx
 endif
 endif
+ifeq ($(CONFIG_IMX_NAND),y)
+# u-boot-nand.imx builds u-boot.imx as well
+ALL-y += u-boot.imx u-boot-nand.imx
+endif
 ifneq ($(CONFIG_VF610),)
 ALL-y += u-boot.vyb
 endif
